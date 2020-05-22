@@ -1,5 +1,16 @@
+/**
+ * @param {number[][]} matrix
+ * @return {boolean}
+ */
 var isToeplitzMatrix = function(matrix) {
-    let N=matrix.length,M=matrix[1].length;
+    
+    let N=matrix.length;
+    let M=matrix[0].length;
+    if(N<=1)
+        {
+            return true;
+        }
+    else{
     function checkDiagonal(mat,i,j) 
     { 
         let res = mat[i][j]; 
@@ -16,7 +27,7 @@ var isToeplitzMatrix = function(matrix) {
     
     function isToepliz(mat) 
     { 
-        // do for each element in first row 
+        
         for (let i = 0; i < M; i++) 
         { 
            
@@ -29,12 +40,13 @@ var isToeplitzMatrix = function(matrix) {
             
             if (!checkDiagonal(mat, i, 0)) 
                 return false;
-        return true; 
-    } 
+        }
+            return true; 
+
     }
     if (isToepliz(matrix)) 
         return true;
     else
         return false; 
-    
+    }
 };
